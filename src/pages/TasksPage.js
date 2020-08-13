@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,22 @@ const useStyles = makeStyles((theme) => ({
 
 export const TasksPage = () => {
   const classes = useStyles();
+  const [tasks, setTasks] = useState()
+
+  useEffect(() => {
+    const loading = async () => {
+      try {
+        const res = await axios.get('http://localhost:3000/db.json')
+        setTasks(res.data.tasksList)
+      } catch (error) {
+        console.log('Error', error)
+      }
+    }
+    loading()
+  }, [])
+
+  console.log(tasks)
+
   return (
     <Grid container className={classes.root} spacing={3}>
       <Grid container className={classes.boardsWrap}>

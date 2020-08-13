@@ -1,0 +1,260 @@
+{
+  "tasksList": [
+    {
+      "id": 1,
+      "title": "Backlog",
+      "boards": [
+        {
+          "id": 1,
+          "title": "Develop Mobile App",
+          "category": {
+            "title": "Features",
+            "color": "#ff0066"
+          },
+          "start": "2020-06-10",
+          "status": "Waiting",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "Ted Erricson",
+              "avatar": "Erricson"
+            },
+            {
+              "id": 3,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Redesign Landing page",
+          "category": {
+            "title": "User Support",
+            "color": "#00ffff"
+          },
+          "start": "2020-06-16",
+          "status": "Waiting",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "Ted Erricson",
+              "avatar": "Erricson"
+            },
+            {
+              "id": 3,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            },
+            {
+              "id": 4,
+              "name": "Ted Erricson",
+              "avatar": "Erricson"
+            },
+            {
+              "id": 5,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "New design for Landing",
+          "category": {
+            "title": "Design",
+            "color": "#b31aff"
+          },
+          "start": "2020-06-28",
+          "status": "Approved",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "API Improvement",
+          "category": {
+            "title": "Marketing",
+            "color": "#ffcc00"
+          },
+          "start": "2020-06-28",
+          "status": "Approved",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Design",
+      "boards": [
+        {
+          "id": 1,
+          "title": "Create a new Landing UI",
+          "category": {
+            "title": "Marketing",
+            "color": "#ffcc00"
+          },
+          "start": "2020-06-28",
+          "status": "Approved",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Brand Logo design",
+          "category": {
+            "title": "Features",
+            "color": "#ff0066"
+          },
+          "start": "2020-06-16",
+          "status": "Waiting",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "Ted Erricson",
+              "avatar": "Erricson"
+            },
+            {
+              "id": 3,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Dashboard UI",
+          "category": {
+            "title": "Design",
+            "color": "#b31aff"
+          },
+          "start": "2020-06-25",
+          "status": "Approved",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "In progress",
+      "boards": [
+        {
+          "id": 1,
+          "title": "Redesign Landing page",
+          "category": {
+            "title": "User Support",
+            "color": "#00ffff"
+          },
+          "start": "2020-06-16",
+          "status": "Waiting",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "Ted Erricson",
+              "avatar": "Erricson"
+            },
+            {
+              "id": 3,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            },
+            {
+              "id": 4,
+              "name": "Ted Erricson",
+              "avatar": "Erricson"
+            },
+            {
+              "id": 5,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Blog Template",
+          "category": {
+            "title": "Design",
+            "color": "#b31aff"
+          },
+          "start": "2020-06-28",
+          "status": "Completed",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
+            },
+            {
+              "id": 2,
+              "name": "John Franklin",
+              "avatar": "Franklin"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
