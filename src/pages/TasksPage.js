@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Paper, Typography } from '@material-ui/core';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const TasksPage = () => {
   const classes = useStyles();
-  const [tasks, setTasks] = useState()
+  const [tasks, setTasks] = useState([])
 
   useEffect(() => {
     const loading = async () => {
@@ -74,12 +74,15 @@ export const TasksPage = () => {
   return (
     <Grid container className={classes.root} spacing={3}>
       <Grid container className={classes.boardsWrap}>
-        <Grid className={classes.boardsContent}>
-          <Paper elevation={3} className={classes.boardCard}>
-            <Grid container className={classes.boardHeader}>
-            </Grid>
-          </Paper>
-        </Grid>
+        {tasks &&
+          <Grid className={classes.boardsContent}>
+            <Paper elevation={3} className={classes.boardCard}>
+              <Grid container className={classes.boardHeader}>
+                <Typography variant="h3" component="h3">test</Typography>
+              </Grid>
+            </Paper>
+          </Grid>
+        }
       </Grid>
     </Grid>
   )
