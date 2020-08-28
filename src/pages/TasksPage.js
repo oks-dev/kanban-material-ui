@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { getTasks } from '../redux/actions/tasks'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,23 +55,20 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const TasksPage = () => {
+const TasksPage = ({ tasks, getTasks }) => {
   const classes = useStyles();
-  const [tasks, setTasks] = useState([])
 
   useEffect(() => {
     const loading = async () => {
       try {
         const res = await axios.get('http://localhost:3000/db.json')
-        setTasks(res.data.tasksList)
+        getTasks(res.data.tasksList)
       } catch (error) {
         console.log('Error', error)
       }
     }
     loading()
   }, [])
-
-  console.log(tasks)
 
   return (
     <Grid container className={classes.root} spacing={3}>
@@ -87,3 +86,15 @@ export const TasksPage = () => {
     </Grid>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    tasks: state.tasks.tasksList
+  }
+}
+
+const mapDispatchToProps = {
+  getTasks
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TasksPage)
