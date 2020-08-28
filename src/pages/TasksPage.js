@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getTasks } from '../redux/actions/tasks'
+import { Board } from '../components/Board'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,15 +74,13 @@ const TasksPage = ({ tasks, getTasks }) => {
   return (
     <Grid container className={classes.root} spacing={3}>
       <Grid container className={classes.boardsWrap}>
-        {tasks &&
-          <Grid className={classes.boardsContent}>
-            <Paper elevation={3} className={classes.boardCard}>
-              <Grid container className={classes.boardHeader}>
-                <Typography variant="h3" component="h3">test</Typography>
-              </Grid>
-            </Paper>
-          </Grid>
-        }
+        {tasks && tasks.map(task => {
+          return (
+            <Grid key={task.id} className={classes.boardsContent}>
+              <Board task={task} />
+            </Grid>
+          )
+        })}
       </Grid>
     </Grid>
   )

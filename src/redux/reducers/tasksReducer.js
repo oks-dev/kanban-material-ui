@@ -6,7 +6,6 @@ const initialState = {
 
 export const tasksReducer = (state = initialState, action) => {
   const value = action.payload;
-  console.log(value)
 
   switch (action.type) {
     case GET_TASKS:
