@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
+import { BoardsList } from '../components/BoardsList'
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getTasks } from '../redux/actions/tasks'
-import { Board } from '../components/Board'
+
+const url = 'http://localhost:3000/db.json'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +64,7 @@ const TasksPage = ({ tasks, getTasks }) => {
   useEffect(() => {
     const loading = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/db.json')
+        const res = await axios.get(url)
         getTasks(res.data.tasksList)
       } catch (error) {
         console.log('Error', error)
@@ -74,13 +76,15 @@ const TasksPage = ({ tasks, getTasks }) => {
   return (
     <Grid container className={classes.root} spacing={3}>
       <Grid container className={classes.boardsWrap}>
-        {tasks && tasks.map(task => {
-          return (
-            <Grid key={task.id} className={classes.boardsContent}>
-              <Board task={task} />
-            </Grid>
-          )
-        })}
+        <Grid className={classes.boardsContent}>
+          {tasks && tasks.map(task => {
+            return (
+              <Paper key={task.id} elevation={3} className={classes.boardCard}>
+                <BoardsList boards={task.boards} />
+              </Paper>
+            )
+          })}
+        </Grid>
       </Grid>
     </Grid>
   )
