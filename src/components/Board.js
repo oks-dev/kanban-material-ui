@@ -1,6 +1,6 @@
 import React from 'react'
-import { Avatar, Card, CardContent, Chip, Grid, Typography } from '@material-ui/core'
-// import { AvatarGroup } from '@material-ui/lab'
+import { Avatar, Card, CardContent, Chip, Grid, Typography, Box } from '@material-ui/core'
+import { AvatarGroup } from '@material-ui/lab'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
@@ -75,15 +75,15 @@ export const Board = ({ board }) => {
           <Typography component="h5" variant="h6">
             {board.title}
           </Typography>
-          {/* <Grid item xs={12}>
-              <Box component="small" m={1}>
+          <Grid item xs={12}>
+            <Box component="small" m={1}>
               <Typography variant='body2'>{board.start}</Typography>
-              </Box>
-              <Box component="small" m={1}>
-                <Typography variant='body2'>{board.status}</Typography>
-              </Box>
-            </Grid> */}
-          {/* <Grid item xs={12} className={classes.bottomBox}>
+            </Box>
+            <Box component="small" m={1}>
+              <Typography variant='body2'>{board.status}</Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} className={classes.bottomBox}>
             {
               board.category.title && <Chip
                 size="small"
@@ -98,7 +98,7 @@ export const Board = ({ board }) => {
                 )
               })}
             </AvatarGroup>
-          </Grid> */}
+          </Grid>
         </CardContent>
       </div>
     </Card>
