@@ -258,7 +258,7 @@
     },
     {
       "id": 4,
-      "title": "Design",
+      "title": "Code Review",
       "boards": [
         {
           "id": 1,
@@ -328,6 +328,29 @@
               "id": 2,
               "name": "John Franklin",
               "avatar": "Franklin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "To Deploy",
+      "boards": [
+        {
+          "id": 1,
+          "title": "New Landing UI",
+          "category": {
+            "title": "Deploy",
+            "color": "#ffcc00"
+          },
+          "start": "2020-06-28",
+          "status": "Approved",
+          "members": [
+            {
+              "id": 1,
+              "name": "Sarah Conner",
+              "avatar": "Conner"
             }
           ]
         }
