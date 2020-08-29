@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Divider, Grid, Paper, Typography } from '@material-ui/core';
 import { BoardsList } from '../components/BoardsList'
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -80,6 +80,11 @@ const TasksPage = ({ tasks, getTasks }) => {
           {tasks && tasks.map(task => {
             return (
               <Paper key={task.id} elevation={3} className={classes.boardCard}>
+                <Grid container className={classes.boardHeader}>
+                  <Typography component='h5' variant='h5'>{task.title}</Typography>
+                </Grid>
+                <Divider />
+
                 <BoardsList boards={task.boards} />
               </Paper>
             )

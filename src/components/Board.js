@@ -79,9 +79,9 @@ export const Board = ({ board }) => {
             <Box component="small" m={1}>
               <Typography variant='body2'>{board.start}</Typography>
             </Box>
-            <Box component="small" m={1}>
+            {/* <Box component="small" m={1}>
               <Typography variant='body2'>{board.status}</Typography>
-            </Box>
+            </Box> */}
           </Grid>
           <Grid item xs={12} className={classes.bottomBox}>
             {
