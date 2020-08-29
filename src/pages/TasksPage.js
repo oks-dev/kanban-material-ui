@@ -6,7 +6,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { getTasks } from '../redux/actions/tasks'
 
-const url = 'http://localhost:3000/db.json'
+const url = '/db.json'
 
 const useStyles = makeStyles((theme) => ({
   root: {
