@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const InputAdd = ({ handleClose }) => {
+export const InputAdd = ({ handleClose }) => {
   const classes = useStyles()
 
   return (
@@ -30,5 +30,3 @@ const InputAdd = ({ handleClose }) => {
     />
   )
 }
-
-export default InputAdd

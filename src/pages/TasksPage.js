@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Button,
-  CardActionArea,
-  CardContent,
-  Divider,
-  Grid,
-  Paper,
-  Typography
-} from '@material-ui/core';
-import { BoardsList } from '../components/BoardsList'
+import { Divider, Grid, Paper } from '@material-ui/core';
+import { BoardsList } from '../components/BoardsList';
+import { BoardHeader } from '../components/BoardHeader';
+import { BoardFooter } from '../components/BoardFooter';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getTasks } from '../redux/actions/tasks'
-import InputAdd from '../components/InputAdd';
+import { getTasks } from '../redux/actions/tasks';
 
 const url = '/db.json'
 
@@ -50,11 +43,6 @@ const useStyles = makeStyles((theme) => ({
       width: '300px',
     }
   },
-  boardHeader: {
-    padding: theme.spacing(2),
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  },
   boardButton: {
     padding: theme.spacing(2),
     justifyContent: 'center'
@@ -66,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
 
 const TasksPage = ({ tasks, getTasks }) => {
   const classes = useStyles();
-  const [showInput, setShowInput] = useState(false)
 
   useEffect(() => {
     const loading = async () => {
@@ -80,13 +67,6 @@ const TasksPage = ({ tasks, getTasks }) => {
     loading()
   }, [getTasks])
 
-  const handleAddCard = () => {
-    setShowInput(true)
-  }
-  const handleCloseInput = () => {
-    setShowInput(false)
-  }
-
   return (
     <Grid container className={classes.root} spacing={3}>
       <Grid container className={classes.boardsWrap}>
@@ -94,34 +74,11 @@ const TasksPage = ({ tasks, getTasks }) => {
           {tasks && tasks.map(task => {
             return (
               <Paper key={task.id} elevation={3} className={classes.boardCard}>
-
-                <Grid container className={classes.boardHeader}>
-                  <Typography component='h5' variant='h5'>{task.title}</Typography>
-                </Grid>
+                <BoardHeader title={task.title} />
                 <Divider />
-
                 <BoardsList boards={task.boards} />
-
                 <Divider className={classes.divider} />
-
-                {!showInput ?
-                  <CardActionArea pt="16px">
-                    <CardContent onClick={handleAddCard}>
-                      <Typography component='span' variant='h6'>
-                        Add another card
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  :
-                  <form className={classes.boardButton}>
-
-                    <InputAdd handleClose={handleCloseInput} />
-                    <Button color="primary">
-                      Add
-                    </Button>
-                  </form>
-                }
-
+                <BoardFooter />
               </Paper>
             )
           })}
